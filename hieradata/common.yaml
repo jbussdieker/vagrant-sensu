@@ -3,6 +3,9 @@ classes:
  - base
  - sensu
  - apt
-sensu::rabbitmq_host: 'queue'
+sensu::subscriptions:
+ - common
+sensu::rabbitmq_host: 'queue-int'
 sensu::rabbitmq_user: 'sensu'
 sensu::rabbitmq_password: 'password'
+sensu::client_address: "%{::ipaddress_eth1}"

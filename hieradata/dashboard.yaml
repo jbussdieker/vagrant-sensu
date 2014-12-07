@@ -5,5 +5,5 @@ classes:
 uchiwa::install_repo: false
 uchiwa::sensu_api_endpoints:
  - name: 'dc1'
-   host: 'api'
+   host: 'api-int'
    insecure: false

@@ -2,4 +2,4 @@
 classes:
  - api
 sensu::api: true
-sensu::redis_host: 'redis'
+sensu::redis_host: 'redis-int'

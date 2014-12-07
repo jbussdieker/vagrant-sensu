@@ -1,4 +1,5 @@
 ---
-classes: []
+classes:
+ - server
 sensu::server: true
-sensu::redis_host: 'redis'
+sensu::redis_host: 'redis-int'
