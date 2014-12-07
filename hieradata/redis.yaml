@@ -1,0 +1,4 @@
+---
+classes:
+ - redis
+redis::version: '2.8.18'

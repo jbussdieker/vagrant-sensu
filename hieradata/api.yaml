@@ -1,0 +1,5 @@
+---
+classes:
+ - api
+sensu::api: true
+sensu::redis_host: 'redis'

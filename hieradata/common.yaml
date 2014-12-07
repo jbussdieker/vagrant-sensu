@@ -1,14 +1,8 @@
 ---
 classes:
- - rabbitmq
- - redis
+ - base
  - sensu
- - uchiwa
  - apt
-redis::version: '2.8.18'
-sensu::server: true
-sensu::api: true
-uchiwa::install_repo: false
-uchiwa::sensu_api_endpoints:
- - host: '127.0.0.1'
-   insecure: false
+sensu::rabbitmq_host: 'queue'
+sensu::rabbitmq_user: 'sensu'
+sensu::rabbitmq_password: 'password'

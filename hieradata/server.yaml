@@ -1,0 +1,4 @@
+---
+classes: []
+sensu::server: true
+sensu::redis_host: 'redis'
