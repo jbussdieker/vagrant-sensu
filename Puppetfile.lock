@@ -1,0 +1,36 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    maestrodev-wget (1.5.6)
+    nanliu-staging (1.0.2)
+    puppetlabs-apt (1.7.0)
+      puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-gcc (0.2.0)
+    puppetlabs-rabbitmq (4.1.0)
+      nanliu-staging (>= 0.3.1)
+      puppetlabs-apt (>= 1.0.0)
+      puppetlabs-stdlib (>= 2.0.0)
+    puppetlabs-stdlib (4.4.0)
+    sensu-sensu (1.3.1)
+      maestrodev-wget (>= 1.4.5)
+      puppetlabs-apt (>= 0.0.1)
+      puppetlabs-stdlib (>= 0.0.1)
+    thomasvandoren-redis (0.10.0)
+      maestrodev-wget (>= 1.1.0)
+      puppetlabs-gcc (>= 0.0.3)
+
+GIT
+  remote: git://github.com/jbussdieker/puppet-uchiwa.git
+  ref: master
+  sha: 01f8792f8bfa44f650b307c4259ee53db7a9287f
+  specs:
+    yelp-uchiwa (0.2.7)
+      puppetlabs-apt (>= 0)
+      puppetlabs-stdlib (>= 0)
+
+DEPENDENCIES
+  puppetlabs-rabbitmq (>= 0)
+  sensu-sensu (>= 0)
+  thomasvandoren-redis (>= 0)
+  yelp-uchiwa (>= 0)
+
