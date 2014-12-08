@@ -4,6 +4,7 @@ classes:
  - sensu
  - apt
  - monit
+ - collectd
 monit::interval: 10
 monit::httpd: true
 sensu::subscriptions:

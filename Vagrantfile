@@ -49,4 +49,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "server" do |server|
     server.vm.hostname = "server"
   end
+
+  config.vm.define "graphite" do |graphite|
+    graphite.vm.hostname = "graphite"
+    graphite.vm.network "forwarded_port", guest: 80, host: 4000, auto_correct: true
+
+    graphite.vm.provider "virtualbox" do |virtualbox|
+      virtualbox.memory = 1024
+    end
+  end
 end
