@@ -6,7 +6,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |virtualbox|
     virtualbox.memory = 512
     virtualbox.cpus = 1
-    virtualbox.customize ["guestproperty", "set", :id, "--timesync-threshold", 1000]
   end
 
   config.vm.box = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
