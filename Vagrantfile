@@ -40,6 +40,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "queue" do |rabbitmq|
     rabbitmq.vm.hostname = "queue"
     rabbitmq.vm.network "forwarded_port", guest: 15672, host: 15672, auto_correct: true
+    rabbitmq.vm.network "forwarded_port", guest: 5672, host: 5672, auto_correct: true
 
     rabbitmq.vm.provider "virtualbox" do |virtualbox|
       virtualbox.memory = 1024
