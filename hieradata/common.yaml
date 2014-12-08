@@ -1,10 +1,11 @@
 ---
 classes:
  - base
- - sensu
  - apt
- - monit
+ - ntp
  - collectd
+ - monit
+ - sensu
 monit::interval: 10
 monit::httpd: true
 sensu::subscriptions:
