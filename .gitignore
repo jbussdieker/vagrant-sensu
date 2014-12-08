@@ -1,4 +1,14 @@
 .vagrant/
 .librarian/
 .tmp/
-modules/
+#modules/
+modules/apt/
+modules/gcc/
+modules/monit/
+modules/rabbitmq/
+modules/redis/
+modules/sensu/
+modules/staging/
+modules/stdlib/
+modules/uchiwa/
+modules/wget/
