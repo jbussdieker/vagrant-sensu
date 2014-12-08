@@ -53,7 +53,7 @@ class base {
   }
 
   sensu::check { "memory":
-    command     => '/opt/checks/check-memory-pcnt.sh -w 35 -c 40',
+    command     => '/opt/checks/check-memory-pcnt.sh -w 50 -c 60',
     interval    => 60,
     subscribers => [
       'common'
