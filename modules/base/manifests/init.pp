@@ -23,7 +23,7 @@ class base {
   }
 
   host { 'graphite-int':
-    ip => '172.28.128.32',
+    ip => '172.28.128.36',
   }
 
   file { '/opt/checks':

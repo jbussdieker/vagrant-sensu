@@ -26,9 +26,17 @@ class graphite {
     require => [
       Package['graphite-web'],
       Package['apache2'],
+      Package['libapache2-mod-wsgi'],
     ],
     notify  => Service['apache2'],
   }
+
+  file { '/etc/apache2/sites-enabled/000-default.conf':
+    ensure  => absent,
+    require => Package['apache2'],
+    notify  => Service['apache2'],
+  }
+
 
   file { '/var/lib/graphite/graphite.db':
     ensure  => file,
@@ -40,11 +48,14 @@ class graphite {
       Package['graphite-web'],
       Package['graphite-carbon'],
     ],
+    notify  => Service['apache2'],
   }
 
   exec { 'enable_graphite_site':
     command => '/usr/sbin/a2ensite graphite',
     creates => '/etc/apache2/sites-enabled/graphite.conf',
+    require => File['/etc/apache2/sites-available/graphite.conf'],
+    notify  => Service['apache2'],
   }
 
   service { 'carbon-cache':
