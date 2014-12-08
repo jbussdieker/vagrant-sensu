@@ -3,6 +3,9 @@ classes:
  - base
  - sensu
  - apt
+ - monit
+monit::interval: 10
+monit::httpd: true
 sensu::subscriptions:
  - common
 sensu::rabbitmq_host: 'queue-int'

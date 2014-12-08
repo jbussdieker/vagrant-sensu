@@ -4,8 +4,9 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |virtualbox|
-    virtualbox.memory = 1024
+    virtualbox.memory = 512
     virtualbox.cpus = 1
+    virtualbox.customize ["guestproperty", "set", :id, "--timesync-threshold", 1000]
   end
 
   config.vm.box = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
@@ -26,6 +27,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "api" do |api|
     api.vm.hostname = "api"
     api.vm.network "forwarded_port", guest: 4567, host: 4567, auto_correct: true
+
+    api.vm.provider "virtualbox" do |virtualbox|
+      virtualbox.memory = 1024
+    end
   end
 
   config.vm.define "redis" do |redis|
@@ -36,6 +41,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "queue" do |rabbitmq|
     rabbitmq.vm.hostname = "queue"
     rabbitmq.vm.network "forwarded_port", guest: 15672, host: 15672, auto_correct: true
+
+    rabbitmq.vm.provider "virtualbox" do |virtualbox|
+      virtualbox.memory = 1024
+    end
   end
 
   config.vm.define "server" do |server|

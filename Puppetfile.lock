@@ -6,10 +6,6 @@ FORGE
     puppetlabs-apt (1.7.0)
       puppetlabs-stdlib (>= 2.2.1)
     puppetlabs-gcc (0.2.0)
-    puppetlabs-rabbitmq (4.1.0)
-      nanliu-staging (>= 0.3.1)
-      puppetlabs-apt (>= 1.0.0)
-      puppetlabs-stdlib (>= 2.0.0)
     puppetlabs-stdlib (4.4.0)
     sensu-sensu (1.3.1)
       maestrodev-wget (>= 1.4.5)
@@ -20,15 +16,33 @@ FORGE
       puppetlabs-gcc (>= 0.0.3)
 
 GIT
+  remote: git://github.com/jbussdieker/puppet-monit.git
+  ref: master
+  sha: ba6467384626470d51825fa754a7e04ea1bf75d2
+  specs:
+    jbussdieker-monit (0.0.4)
+
+GIT
   remote: git://github.com/jbussdieker/puppet-uchiwa.git
   ref: master
-  sha: 01f8792f8bfa44f650b307c4259ee53db7a9287f
+  sha: aab89f65907ca2642881e19c87907a276238afa8
   specs:
     yelp-uchiwa (0.2.7)
       puppetlabs-apt (>= 0)
       puppetlabs-stdlib (>= 0)
 
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-rabbitmq
+  ref: master
+  sha: 00f64721d0977a0b99894e3c41477c2cdb69492e
+  specs:
+    puppetlabs-rabbitmq (4.1.0)
+      nanliu-staging (>= 0.3.1)
+      puppetlabs-apt (>= 1.0.0)
+      puppetlabs-stdlib (>= 2.0.0)
+
 DEPENDENCIES
+  jbussdieker-monit (>= 0)
   puppetlabs-rabbitmq (>= 0)
   sensu-sensu (>= 0)
   thomasvandoren-redis (>= 0)
