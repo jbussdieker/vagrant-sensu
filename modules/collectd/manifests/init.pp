@@ -1,4 +1,6 @@
-class collectd {
+class collectd(
+  $graphite_host = "graphite"
+) {
 
   package { 'collectd':
     ensure => present,

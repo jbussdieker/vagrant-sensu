@@ -1,6 +1,7 @@
 .vagrant/
 .librarian/
 .tmp/
+.hosts
 #modules/
 modules/apt/
 modules/gcc/

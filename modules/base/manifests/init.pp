@@ -1,31 +1,8 @@
 class base {
 
+  include hosts
+
   package { 'nagios-plugins': }
-  package { 'tree': }
-
-  host { 'queue-int':
-    ip => '172.28.128.29',
-  }
-
-  host { 'redis-int':
-    ip => '172.28.128.30',
-  }
-
-  host { 'api-int':
-    ip => '172.28.128.28',
-  }
-
-  host { 'dashboard-int':
-    ip => '172.28.128.27',
-  }
-
-  host { 'server-int':
-    ip => '172.28.128.31',
-  }
-
-  host { 'graphite-int':
-    ip => '172.28.128.36',
-  }
 
   file { '/opt/checks':
     ensure  => directory,
@@ -35,6 +12,13 @@ class base {
     group   => 'root',
     mode    => '0755',
     source  => 'puppet:///modules/base',
+  }
+
+  monit::process { 'monit-sensu-client':
+    ensure        => running,
+    start_command => '/etc/init.d/sensu-client start',
+    stop_command  => '/etc/init.d/sensu-client stop',
+    pidfile       => '/var/run/sensu/sensu-client.pid',
   }
 
 }

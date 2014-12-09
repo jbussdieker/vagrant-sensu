@@ -6,11 +6,12 @@ classes:
  - collectd
  - monit
  - sensu
+collectd::graphite_host: 'graphite'
 monit::interval: 10
 monit::httpd: true
 sensu::subscriptions:
  - common
-sensu::rabbitmq_host: 'queue-int'
+sensu::rabbitmq_host: 'queue'
 sensu::rabbitmq_user: 'sensu'
 sensu::rabbitmq_password: 'password'
 sensu::client_address: "%{::ipaddress_eth1}"

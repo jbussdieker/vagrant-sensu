@@ -1,0 +1,19 @@
+---
+classes:
+ - api
+ - dashboard
+ - uchiwa
+ - graphite
+ - queue
+ - rabbitmq
+ - redis
+ - server
+sensu::api: true
+sensu::server: true
+sensu::redis_host: 'localhost'
+uchiwa::install_repo: false
+uchiwa::sensu_api_endpoints:
+ - name: 'dc1'
+   host: 'localhost'
+   insecure: false
+redis::version: '2.8.18'

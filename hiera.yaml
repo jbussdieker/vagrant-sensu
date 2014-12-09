@@ -1,6 +1,7 @@
 ---
 :backends:
   - yaml
+  - puppet
 :yaml:
   :datadir: /vagrant/hieradata
 :hierarchy:

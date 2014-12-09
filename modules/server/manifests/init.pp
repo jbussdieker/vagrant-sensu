@@ -1,5 +1,12 @@
 class server {
 
+  monit::process { 'monit-sensu-server':
+    ensure        => running,
+    start_command => '/etc/init.d/sensu-server start',
+    stop_command  => '/etc/init.d/sensu-server stop',
+    pidfile       => '/var/run/sensu/sensu-server.pid',
+  }
+
   sensu::check { "diskspace":
     command     => '/usr/lib/nagios/plugins/check_disk -w 90% -c 80% -p /',
     interval    => 60,
@@ -19,7 +26,7 @@ class server {
   }
 
   sensu::check { "load":
-    command     => '/usr/lib/nagios/plugins/check_load -w 0.05,0.10,0.20 -c 0.1,0.2,0.4',
+    command     => '/usr/lib/nagios/plugins/check_load -w 0.5,0.5,0.5 -c 1.0,1.0,1.0',
     interval    => 60,
     subscribers => [
       'common'
