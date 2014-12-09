@@ -10,6 +10,7 @@ classes:
  - server
 sensu::api: true
 sensu::server: true
+sensu::rabbitmq_host: 'localhost'
 sensu::redis_host: 'localhost'
 uchiwa::install_repo: false
 uchiwa::sensu_api_endpoints:

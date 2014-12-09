@@ -6,7 +6,6 @@
 modules/apt/
 modules/gcc/
 modules/monit/
-modules/ntp/
 modules/rabbitmq/
 modules/redis/
 modules/sensu/

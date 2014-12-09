@@ -2,17 +2,14 @@
 classes:
  - base
  - apt
- - ntp
- - collectd
  - monit
  - sensu
-collectd::graphite_host: 'graphite'
-monit::interval: 10
+sensu::client_address: "%{::ipaddress_eth1}"
 monit::httpd: true
-sensu::subscriptions:
- - common
+monit::interval: 10
+sensu::purge_config: true
 sensu::rabbitmq_host: 'queue'
 sensu::rabbitmq_user: 'sensu'
 sensu::rabbitmq_password: 'password'
-sensu::client_address: "%{::ipaddress_eth1}"
-sensu::purge_config: true
+sensu::subscriptions:
+ - common
