@@ -9,6 +9,10 @@ class base::hosts {
     target => '/vagrant/.hosts',
   }
 ->
+  host { 'localhost':
+    ip => '127.0.0.1',
+  }
+->
   host { $::hostname:
     ip => $::ipaddress_eth1,
   }
