@@ -3,7 +3,6 @@ classes:
  - api
  - dashboard
  - uchiwa
- - graphite
  - queue
  - rabbitmq
  - redis

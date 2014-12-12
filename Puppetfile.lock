@@ -16,6 +16,15 @@ FORGE
       puppetlabs-gcc (>= 0.0.3)
 
 GIT
+  remote: git://github.com/Yelp/puppet-uchiwa.git
+  ref: master
+  sha: f479de1756060e889cf433e37d202537865acba0
+  specs:
+    yelp-uchiwa (0.3.0)
+      puppetlabs-apt (>= 0)
+      puppetlabs-stdlib (>= 0)
+
+GIT
   remote: git://github.com/jbussdieker/puppet-monit.git
   ref: master
   sha: ba6467384626470d51825fa754a7e04ea1bf75d2
@@ -23,18 +32,9 @@ GIT
     jbussdieker-monit (0.0.4)
 
 GIT
-  remote: git://github.com/jbussdieker/puppet-uchiwa.git
-  ref: master
-  sha: aab89f65907ca2642881e19c87907a276238afa8
-  specs:
-    yelp-uchiwa (0.2.7)
-      puppetlabs-apt (>= 0)
-      puppetlabs-stdlib (>= 0)
-
-GIT
   remote: git://github.com/puppetlabs/puppetlabs-rabbitmq
   ref: master
-  sha: 00f64721d0977a0b99894e3c41477c2cdb69492e
+  sha: 7671f32c13ef4cad0e930d4c33442c5ce797f10a
   specs:
     puppetlabs-rabbitmq (4.1.0)
       nanliu-staging (>= 0.3.1)
